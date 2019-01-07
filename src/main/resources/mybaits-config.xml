@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+        <!DOCTYPE configuration
+                PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+                "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+<properties resource="application.properties"/>
+
+<environments default="test">
+    <environment id="test">
+        <transactionManager type="JDBC" />
+        <dataSource type="POOLED"> <!-- 表示用连接池 -->
+            <property name="driver" value="${jdbc.driverClassName}" />
+            <property name="url" value="${jdbc.url}" />
+            <property name="username" value="${jdbc.username}" />
+            <property name="password" value="${jdbc.password}" />
+        </dataSource>
+    </environment>
+</environments>
+
+<mappers>
+    <mapper class="com.chaincomp.quickmybaits.mapper.SysUserMapper"/>
+</mappers>
+
+</configuration>
