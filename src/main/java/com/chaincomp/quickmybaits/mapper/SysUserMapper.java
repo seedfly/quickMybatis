@@ -1,6 +1,9 @@
 package com.chaincomp.quickmybaits.mapper;
 
 import com.chaincomp.quickmybaits.model.SysUser;
+import org.apache.ibatis.annotations.Select;
+
+import java.util.List;
 
 public interface SysUserMapper {
     /**
@@ -18,4 +21,8 @@ public interface SysUserMapper {
      * @mbg.generated
      */
     int insertSelective(SysUser record);
+
+
+    @Select("select * from testuser")
+    List<SysUser> findAllUsers();
 }
